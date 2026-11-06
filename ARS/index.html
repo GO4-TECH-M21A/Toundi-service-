@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription ARS</title>
+<style>
+body { font-family: Arial; background: #f2f2f2; text-align: center; padding: 15px; }
+.box { background: white; padding: 20px; border-radius: 15px; max-width: 450px; margin: auto; }
+input, select { width: 95%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; }
+label { font-weight: bold; display: block; text-align: left; margin-top: 10px; }
+button { background: #007bff; color: white; padding: 15px; width: 100%; border: none; border-radius: 30px; font-size: 18px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<div class="box">
+<h2>Amicale de la Recherche du Savoir - ARS</h2>
+<p>Fiche d'inscription Membre</p>
+
+<form onsubmit="envoyer(event)">
+
+<label>Nom</label>
+<input type="text" id="nom" placeholder="Ex: Sawadogo" required>
+
+<label>Prénom</label>
+<input type="text" id="prenom" placeholder="Ex: Célestin" required>
+
+<label>Filière</label>
+<select id="filiere" required>
+<option value="">-- Choisir la filière --</option>
+<option>Mathématiques</option>
+<option>Physique-Chimie</option>
+<option>SVT</option>
+<option>Philosophie</option>
+<option>Histoire-Géo</option>
+<option>Français / Lettres</option>
+<option>Anglais</option>
+<option>Autre</option>
+</select>
+
+<label>Ville</label>
+<input type="text" id="ville" placeholder="Ex: Ouagadougou, Bobo, Koudougou" required>
+
+<label>Membre depuis</label>
+<input type="date" id="depuis" required>
+
+<label>Poste dans le bureau ?</label>
+<select id="poste">
+<option value="Simple Membre">Simple Membre - Pas dans le bureau</option>
+<option>Président</option>
+<option>Vice-Président</option>
+<option>Secrétaire Général</option>
+<option>Secrétaire Adjoint</option>
+<option>Trésorier</option>
+<option>Trésorier Adjoint</option>
+<option>Responsable Organisation</option>
+<option>Responsable Communication</option>
+</select>
+
+<br><br>
+<button type="submit">S'inscrire à l'ARS</button>
+
+</form>
+</div>
+
+<script>
+function envoyer(event) {
+  event.preventDefault();
+  var nom = document.getElementById("nom").value;
+  var prenom = document.getElementById("prenom").value;
+  var filiere = document.getElementById("filiere").value;
+  var ville = document.getElementById("ville").value;
+  var depuis = document.getElementById("depuis").value;
+  var poste = document.getElementById("poste").value;
+
+  var message = "Nouveau membre ARS:%0A" + "Nom: " + nom + "%0A" + "Prénom: " + prenom + "%0A" + "Filière: " + filiere + "%0A" + "Ville: " + ville + "%0A" + "Membre depuis: " + depuis + "%0A" + "Poste: " + poste;
+
+  window.open("https://wa.me/22673667961?text=" + message, "_blank");
+}
+</script>
+
+</body>
+</html>
